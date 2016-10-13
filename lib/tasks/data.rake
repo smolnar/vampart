@@ -11,34 +11,33 @@ namespace :data do
 
   desc 'Download all images, fast!'
   task :download_images do
-    pool = Curl::Multi.new
-    pool.max_connects = 25
+    pool = Typhoeus::Hydra.new(max_concurrency: 50)
 
     DataRepository.all.each do |artwork|
       image_url = artwork[:image_url]
+      request = Typhoeus::Request.new(image_url, followlocation: true)
 
-      curl = Curl::Easy.new(image_url) do |http|
-        http.follow_location = true
-        http.on_success do |response|
-          name = "#{Digest::SHA256.hexdigest(response.body_str)}.jpg"
+      request.on_success do |response|
+        puts "Downloaded Image: #{response.effective_url} (#{response.body.size / 1000 } kb)"
+        name = "#{Digest::SHA256.hexdigest(response.body)}.jpg"
 
-          File.open(Rails.root.join("storage/images/#{name}"), 'wb') do |f|
-            f.write(response.body_str)
-          end
-
-          artwork['image'] = name
+        File.open(Rails.root.join("storage/images/#{name}"), 'wb') do |f|
+          f.write(response.body)
         end
 
-        http.on_failure do |response|
-          puts "Retrying: #{response.last_effective_url}"
-          pool.add(response)
-        end
+        artwork['image'] = name
       end
 
-      pool.add(curl)
+      request.on_failure do |response|
+        warn "Image download failed (#{response.code}). Retrying #{response.effective_url} ..."
+
+        pool.queue(request)
+      end
+
+      pool.queue(request)
     end
 
-    pool.perform
+    pool.run
 
     DataRepository.save
   end

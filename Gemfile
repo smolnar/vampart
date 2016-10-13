@@ -15,6 +15,9 @@ gem 'curb'
 # Elasticsearch
 gem 'elasticsearch'
 
+# Parallel downloads
+gem 'typhoeus'
+
 group :development, :test do
   gem 'pry-rails'
 end

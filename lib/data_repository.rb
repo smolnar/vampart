@@ -11,7 +11,7 @@ class DataRepository
     @data = nil
   end
 
-  def self.save(other = {})
+  def self.save(other = [])
     reload!
 
     data = (other + all).uniq { |e| e.values_at(:id, :source) }
