@@ -12,8 +12,9 @@ namespace :data do
   desc 'Download all images, fast!'
   task :download_images do
     pool = Typhoeus::Hydra.new(max_concurrency: 50)
+    data = DataRepository.all
 
-    DataRepository.all.each do |artwork|
+    data.each do |artwork|
       image_url = artwork[:image_url]
       request = Typhoeus::Request.new(image_url, followlocation: true)
 
@@ -39,6 +40,6 @@ namespace :data do
 
     pool.run
 
-    DataRepository.save
+    DataRepository.save(data)
   end
 end
