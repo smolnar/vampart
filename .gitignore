@@ -18,3 +18,4 @@
 
 .env.local
 storage/images/*.jpg
+storage/faces/*.jpg
