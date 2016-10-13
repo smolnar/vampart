@@ -13,7 +13,7 @@ class Nasjonalmuseet
       url.gsub!(/offset=\d+/, "offset=#{(offset += 1) * 10}")
     end
 
-    results
+    results.select { |e| e[:image_url].present? }
   end
 
   class Parser
