@@ -11,12 +11,12 @@ class DataRepository
     @data = nil
   end
 
-  def self.save(other)
+  def self.save(other = {})
     reload!
 
-    File.open(path, 'w') do |f|
-      data = (all + other).uniq { |e| e.values_at(:id, :source) }
+    data = (other + all).uniq { |e| e.values_at(:id, :source) }
 
+    File.open(path, 'w') do |f|
       f.write(JSON.pretty_generate(data))
     end
   end
