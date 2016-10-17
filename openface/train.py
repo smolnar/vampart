@@ -55,9 +55,14 @@ def getFaces(path):
     faces = list()
     image = cv2.imread(path)
 
-    with measure('Detecting faces'):
-        rgbImage = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        boxes = align.getAllFaceBoundingBoxes(rgbImage)
+    try:
+        with measure('Detecting faces'):
+            rgbImage = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            boxes = align.getAllFaceBoundingBoxes(rgbImage)
+    except cv2.error as e:
+        print('OpenCV Error while procesing %s' % path)
+
+        return list()
 
     for i, box in enumerate(boxes):
         x1, y1, x2, y2 = (box.left(), box.top(), box.right(), box.bottom())
