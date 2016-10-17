@@ -7,6 +7,7 @@ RSpec.describe 'Webumenia API' do
     expect(data.size).to eql(10)
 
     item = data.first
+
     expect(item).to eql(
       id: 'SVK:SNG.O_6269',
       source: 'api.webumenia.sk',

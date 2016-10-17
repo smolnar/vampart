@@ -1,4 +1,6 @@
 require 'elasticsearch'
+require 'typhoeus'
+require 'typhoeus/adapters/faraday'
 require 'curb'
 
 class Webumenia

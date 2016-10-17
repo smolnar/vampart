@@ -1,5 +1,5 @@
 class Nasjonalmuseet
-  def self.get(query)
+  def self.get(query, size: 10_000)
     url = "https://snl.no/api/v1/search?query=#{query}&limit=10&offset=0"
     offset = 0
     results = Array.new
@@ -7,7 +7,7 @@ class Nasjonalmuseet
     loop do
       data = Parser.parse(Curl.get(url).body_str)
 
-      break if data.empty?
+      break if data.empty? || (offset * 10) >= size
 
       results += data
       url.gsub!(/offset=\d+/, "offset=#{(offset += 1) * 10}")
@@ -20,7 +20,7 @@ class Nasjonalmuseet
     def self.parse(content)
       JSON.parse(content).map do |attributes|
         {
-          id: attributes['article_id'],
+          id: attributes['article_id'].to_s,
           source: 'nkl.snl.no/api/v1',
           title: attributes['title'],
           year: nil, # TODO what to do?

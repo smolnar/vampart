@@ -1,0 +1,444 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: WEBUMENIA_ELASTICSEARCH_URL/items/_search
+    body:
+      encoding: UTF-8
+      string: '{"query":{"bool":{"must":[{"term":{"has_image":true}}],"should":[{"multi_match":{"query":"portret
+        podobizen","analyzer":"slovencina","operator":"or","fields":["title.stemmed","author.stemmed","description.stemmed","topic.stemmed","tag.stemmed","techinque.stemmed"]}}],"minimum_should_match":1}},"size":10}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Basic aGFja2F0aG9uOmFydGRhdGE=
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '9019'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"took":6,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1882,"max_score":4.247047,"hits":[{"_index":"webumenia","_type":"items","_id":"SVK:SNG.O_6269","_score":4.247047,"_source":{"id":"SVK:SNG.O_6269","identifier":"O
+        6269","title":"Podobize\u0148 M.M.Hod\u017eu","author":["Klemens, Jozef Bo\u017eetech"],"description":"V\u00fdznamn\u00e9ho
+        mu\u017ea, ideol\u00f3ga \u0161t\u00farovsk\u00e9ho hnutia a presadzovate\u013ea
+        novouz\u00e1konenej sloven\u010diny, portr\u00e9toval Klemens v roku 1846
+        po\u010das Hod\u017eovho p\u00f4sobenia v Liptovskom Mikul\u00e1\u0161i. V
+        uvedenom \u010dase bolo toto mesto jedn\u00fdm zo stred\u00edsk n\u00e1rodn\u00e9ho
+        \u017eivota, v ktorom sa organizovala liptovsk\u00e1 inteligencia, me\u0161\u0165ania
+        i \u013eud, zakladali sa u\u010dite\u013esk\u00e9 a \u010ditate\u013esk\u00e9
+        spolky. Realizovali sa tu i zbierky na podporu pre\u0161porsk\u00e9ho Slovansk\u00e9ho
+        \u00fastavu a katedry re\u010di a literat\u00fary na evanjelickom l\u00fdceu.
+        Klemens zachytil Hod\u017eu s\u00edce ve\u013emi stroho, ale v takmer heroickej
+        romantickej p\u00f3ze. Jeho tv\u00e1r je verne vykreslen\u00e1, rovnako aj
+        odev, ktor\u00e9ho \u010dierno-biela striedmos\u0165 je zd\u00f4raznen\u00e1
+        detailn\u00fdm, takmer plastick\u00fdm podan\u00edm \u010dipkov\u00e9ho \u017eab\u00f3.
+        Priam ve\u013ekolep\u00e9mu vyzneniu diela pom\u00e1ha prirodzen\u00fd postoj
+        modelu s rukami prekr\u00ed\u017een\u00fdmi na hrudi, jednofarebnos\u0165
+        pozadia a kolorit studen\u00fdch farieb. Z\u00e1rove\u0148 J. B. Klemens upustil
+        od ak\u00fdchko\u013evek symbolick\u00fdch predmetov, ktor\u00e9 vyu\u017e\u00edval
+        na portr\u00e9toch v tom obdob\u00ed. V\u00e4\u010d\u0161inu \u0160t\u00farovcov
+        portr\u00e9tovali Klemens alebo Peter Michal Boh\u00fa\u0148, ale z revolu\u010dn\u00fdch
+        40. rokov 19. storo\u010dia sa ich zachovalo pomerne m\u00e1lo, \u010do s\u00faviselo
+        s okrajov\u00fdm z\u00e1ujmom o v\u00fdtvarn\u00e9 umenie a z\u00e1rove\u0148
+        aj s nedostatkom financi\u00ed na tak\u00e9to objedn\u00e1vky.","work_type":"maliarstvo","topic":["mu\u017esk\u00fd
+        portr\u00e9t"],"tag":["portr\u00e9t","j.b.klemens- podobizen andreja zipsera","k\u0148az","\u0161t\u00farovci"],"place":[],"measurement":null,"dating":"1846","date_earliest":"1846","date_latest":"1846","medium":"pl\u00e1tno","technique":["olej"],"gallery":"Slovensk\u00e1
+        n\u00e1rodn\u00e1 gal\u00e9ria, SNG","updated_at":"2016-05-18 23:20:58","created_at":"2014-12-15
+        11:03:51","has_image":true,"has_iip":true,"is_free":true,"related_work":null,"authority_id":["4921"],"view_count":1284}},{"_index":"webumenia","_type":"items","_id":"SVK:SNG.O_6589","_score":2.7011292,"_source":{"id":"SVK:SNG.O_6589","identifier":"O
+        6589","title":"Portr\u00e9t mu\u017ea","author":["Murmann, Jozef Arp\u00e1d"],"description":"","work_type":"maliarstvo","topic":["mu\u017esk\u00fd
+        portr\u00e9t"],"tag":["portr\u00e9t"],"place":[],"measurement":null,"dating":"1918\/1918","date_earliest":"1918","date_latest":"1918","medium":"preglejka","technique":["olej"],"gallery":"Slovensk\u00e1
+        n\u00e1rodn\u00e1 gal\u00e9ria, SNG","updated_at":"2015-10-06 23:50:41","created_at":"2015-05-18
+        15:19:19","has_image":true,"has_iip":true,"is_free":true,"related_work":null,"authority_id":["6991"],"view_count":396}},{"_index":"webumenia","_type":"items","_id":"SVK:SNG.O_4051","_score":2.3622441,"_source":{"id":"SVK:SNG.O_4051","identifier":"O
+        4051","title":"Portr\u00e9t p\u00e1na K.","author":["Weiner-Kr\u00e1\u013e,
+        Imrich"],"description":"","work_type":"maliarstvo","topic":["portr\u00e9t"],"tag":["portr\u00e9t"],"place":[],"measurement":null,"dating":"1937","date_earliest":"1937","date_latest":"1937","medium":"pl\u00e1tno","technique":["olej"],"gallery":"Slovensk\u00e1
+        n\u00e1rodn\u00e1 gal\u00e9ria, SNG","updated_at":"2015-10-07 00:07:23","created_at":"2015-05-18
+        14:35:09","has_image":true,"has_iip":true,"is_free":false,"related_work":null,"authority_id":["11680"],"view_count":333}},{"_index":"webumenia","_type":"items","_id":"SVK:SNG.O_3477","_score":2.3622441,"_source":{"id":"SVK:SNG.O_3477","identifier":"O
+        3477","title":"Portr\u00e9t mu\u017ea s ihlicou v n\u00e1kr\u010dn\u00edku","author":["Czauczik,
+        Jozef"],"description":"","work_type":"maliarstvo","topic":["portr\u00e9t","mu\u017esk\u00fd
+        portr\u00e9t"],"tag":["portr\u00e9t"],"place":[],"measurement":null,"dating":"1840-1850","date_earliest":"1840","date_latest":"1850","medium":"lepenka","technique":["olej"],"gallery":"Slovensk\u00e1
+        n\u00e1rodn\u00e1 gal\u00e9ria, SNG","updated_at":"2016-03-15 11:22:06","created_at":"2014-12-15
+        11:01:27","has_image":true,"has_iip":true,"is_free":true,"related_work":null,"authority_id":["1744"],"view_count":442}},{"_index":"webumenia","_type":"items","_id":"SVK:SNG.O_1705","_score":2.3622441,"_source":{"id":"SVK:SNG.O_1705","identifier":"O
+        1705","title":"Portr\u00e9t pod\u011bbradsk\u00e9ho me\u0161\u0165ana A. Juppa","author":["Klemens,
+        Jozef Bo\u017eetech"],"description":"","work_type":"maliarstvo","topic":["portr\u00e9t","mu\u017esk\u00fd
+        portr\u00e9t"],"tag":["portr\u00e9t"],"place":[],"measurement":null,"dating":"1845","date_earliest":"1845","date_latest":"1845","medium":"pl\u00e1tno","technique":["olej"],"gallery":"Slovensk\u00e1
+        n\u00e1rodn\u00e1 gal\u00e9ria, SNG","updated_at":"2016-05-18 23:21:00","created_at":"2014-12-15
+        10:58:55","has_image":true,"has_iip":false,"is_free":true,"related_work":null,"authority_id":["4921"],"view_count":702}},{"_index":"webumenia","_type":"items","_id":"SVK:SNG.UP-DK_708","_score":2.3142698,"_source":{"id":"SVK:SNG.UP-DK_708","identifier":"UP-DK
+        708","title":"Ferdi\u0161 Kostka. Portr\u00e9t","author":["Bl\u00fchov\u00e1,
+        Irena"],"description":"","work_type":"fotografia","topic":["portr\u00e9t","pracovn\u00fd
+        mot\u00edv","architektonick\u00fd mot\u00edv"],"tag":["portr\u00e9t"],"place":[],"measurement":null,"dating":"1947","date_earliest":"1947","date_latest":"1947","medium":"papier,
+        fotografick\u00fd","technique":["\u010diernobiela fotografia"],"gallery":"Slovensk\u00e1
+        n\u00e1rodn\u00e1 gal\u00e9ria, SNG","updated_at":"2016-09-26 22:08:13","created_at":"2015-05-18
+        13:54:41","has_image":true,"has_iip":true,"is_free":false,"related_work":"Ferdi\u0161
+        Kostka","authority_id":["954"],"view_count":412}},{"_index":"webumenia","_type":"items","_id":"SVK:OGD.O_1857","_score":2.3142698,"_source":{"id":"SVK:OGD.O_1857","identifier":"O
+        1857","title":"Zat\u00falan\u00fd koh\u00fatik","author":["Medveck\u00e1,
+        M\u00e1ria"],"description":"","work_type":"maliarstvo","topic":["portr\u00e9t"],"tag":["portr\u00e9t"],"place":[],"measurement":null,"dating":"1974-1975","date_earliest":"1974","date_latest":"1975","medium":"sololit","technique":["olej"],"gallery":"Oravsk\u00e1
+        gal\u00e9ria, OGD","updated_at":"2015-10-06 23:53:11","created_at":"2015-05-29
+        17:48:51","has_image":true,"has_iip":true,"is_free":false,"related_work":null,"authority_id":["6481"],"view_count":2114}},{"_index":"webumenia","_type":"items","_id":"SVK:SNG.O_6499","_score":2.2821794,"_source":{"id":"SVK:SNG.O_6499","identifier":"O
+        6499","title":"Hlava robotn\u00edka","author":["Ga\u0161par, Milan"],"description":"","work_type":"maliarstvo","topic":["portr\u00e9t","mu\u017esk\u00fd
+        portr\u00e9t"],"tag":["portr\u00e9t"],"place":[],"measurement":null,"dating":"1950-1960","date_earliest":"1950","date_latest":"1960","medium":"preglejka","technique":["olej"],"gallery":"Slovensk\u00e1
+        n\u00e1rodn\u00e1 gal\u00e9ria, SNG","updated_at":"2015-10-07 01:07:10","created_at":"2015-05-18
+        15:18:13","has_image":true,"has_iip":true,"is_free":false,"related_work":null,"authority_id":["3004"],"view_count":232}},{"_index":"webumenia","_type":"items","_id":"SVK:SNG.O_1494","_score":2.2821794,"_source":{"id":"SVK:SNG.O_1494","identifier":"O
+        1494","title":"Podobize\u0148 pani Plechovej","author":["Boh\u00fa\u0148,
+        Peter Michal"],"description":"","work_type":"maliarstvo","topic":["portr\u00e9t"],"tag":["portr\u00e9t"],"place":[],"measurement":null,"dating":"1848
+        okolo","date_earliest":"1838","date_latest":"1858","medium":"pl\u00e1tno","technique":["olej"],"gallery":"Slovensk\u00e1
+        n\u00e1rodn\u00e1 gal\u00e9ria, SNG","updated_at":"2015-10-07 01:13:22","created_at":"2014-12-15
+        11:10:39","has_image":true,"has_iip":true,"is_free":true,"related_work":null,"authority_id":["1022"],"view_count":376}},{"_index":"webumenia","_type":"items","_id":"SVK:SNG.O_871","_score":2.2821794,"_source":{"id":"SVK:SNG.O_871","identifier":"O
+        871","title":"Star\u00fd \u017eeliar","author":["\u010cemick\u00fd, Ladislav"],"description":"","work_type":"maliarstvo","topic":["mu\u017esk\u00fd
+        portr\u00e9t"],"tag":["portr\u00e9t"],"place":[],"measurement":null,"dating":"1951","date_earliest":"1951","date_latest":"1951","medium":"pl\u00e1tno","technique":["olej"],"gallery":"Slovensk\u00e1
+        n\u00e1rodn\u00e1 gal\u00e9ria, SNG","updated_at":"2015-10-04 03:40:52","created_at":"2015-05-18
+        13:46:27","has_image":true,"has_iip":true,"is_free":false,"related_work":null,"authority_id":["1781"],"view_count":289}}]}}'
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:58 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:SNG.O_6269
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:58 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:SNG.O_6589
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:58 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:SNG.O_4051
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:58 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:SNG.O_3477
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:58 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:SNG.O_1705
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:59 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:SNG.UP-DK_708
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:59 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:OGD.O_1857
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:59 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:SNG.O_6499
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:59 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:SNG.O_1494
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:59 GMT
+- request:
+    method: get
+    uri: http://media.webumenia.sk/SVK:SNG.O_871
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9-1ubuntu4.20
+      Cache-Control:
+      - no-cache
+      Date:
+      - Mon, 17 Oct 2016 16:41:23 GMT
+      Set-Cookie:
+      - laravel_session=eyJpdiI6InJFZzZ5YklSYzlHRU5kWW1ic3pLQWc9PSIsInZhbHVlIjoiUUhPXC95c0ZwMUhIaW1GSFNnNkxFckpZWUYyWmJCaWxIRElRclwvSmpJSkZLYzg5YW9OWHdWRkI3NEVxVjRUeTNwZEFjVWNQR1lHVUcyaDc5ZDk5Q3RPUT09IiwibWFjIjoiYTcwY2Y4NjlkODBkNjQ0YzYyZWUyOTFmOTVlZjhlZDI0YmYxYWRiMDUyYTU1MzYwNmYwZDc4MmM5OTdiMjFiYSJ9;
+        expires=Mon, 17-Oct-2016 18:41:23 GMT; Max-Age=7200; path=/; httponly
+    body:
+      encoding: ASCII-8BIT
+      string: http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg
+    http_version: 
+  recorded_at: Mon, 17 Oct 2016 16:41:59 GMT
+recorded_with: VCR 3.0.3

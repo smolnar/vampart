@@ -5,7 +5,7 @@ RSpec.describe DataRepository do
 
   describe '.all' do
     it 'provides all data' do
-      expect(subject.all.size).to eql(1883)
+      expect(subject.all.size).to eql(2149)
       expect(subject.all).to include(
         id: 'SVK:SNG.O_6269',
         source: 'api.webumenia.sk',
@@ -27,7 +27,7 @@ RSpec.describe DataRepository do
       }]
 
       expect(File).to receive(:open).with(Rails.root.join('data.json'), 'w').and_yield(file)
-      expect(file).to receive(:write).with(JSON.pretty_generate(subject.all + data))
+      expect(file).to receive(:write).with(JSON.pretty_generate(data + subject.all))
 
       subject.save(data)
     end
@@ -47,7 +47,7 @@ RSpec.describe DataRepository do
       other = subject.all.select { |e| e[:id] != 'SVK:SNG.O_6269' }
 
       expect(File).to receive(:open).with(Rails.root.join('data.json'), 'w').and_yield(file)
-      expect(file).to receive(:write).with(JSON.pretty_generate(other + data))
+      expect(file).to receive(:write).with(JSON.pretty_generate(data + other))
 
       subject.save(data)
     end
