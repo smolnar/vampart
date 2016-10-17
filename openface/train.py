@@ -45,7 +45,7 @@ neuralNet = openface.TorchNeuralNet(os.path.join(openfaceModelDir, 'nn4.small2.v
 
 @contextmanager
 def measure(message):
-    print message, ' ...',
+    print message, '...',
     start = time.time()
     yield
     print 'done ({}s)'.format(time.time() - start)
@@ -53,9 +53,7 @@ def measure(message):
 def getFaces(path):
     name = re.search('(\w+)\.(jpg|png)\Z', path).group(1)
     faces = list()
-
-    with measure('Reading %s' % name):
-        image = cv2.imread(path)
+    image = cv2.imread(path)
 
     with measure('Detecting faces'):
         rgbImage = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -65,12 +63,12 @@ def getFaces(path):
         x1, y1, x2, y2 = (box.left(), box.top(), box.right(), box.bottom())
 
         if y2 - y1 >= 100:
-            start = time.time()
             filename = '%s-%d.jpg' % (name, i)
-            face = image[y1:y2, x1:x2]
-            cv2.imwrite(os.path.join(facesPath, filename), face)
 
             with measure('Extracting face as %s' % filename):
+                face = image[y1:y2, x1:x2]
+                cv2.imwrite(os.path.join(facesPath, filename), face)
+
                 alignedFace = align.align(96, rgbImage, box, landmarkIndices = openface.AlignDlib.OUTER_EYES_AND_NOSE)
 
                 if alignedFace is not None:
@@ -78,7 +76,7 @@ def getFaces(path):
 
                     faces.append({
                         'file': filename,
-                        'representation': rep.tolist()
+                        'model': rep.tolist()
                     })
 
     return faces
@@ -86,11 +84,14 @@ def getFaces(path):
 with open(dataFile) as file:
     data = json.load(file)
 
-    for artwork in data:
+    for i, artwork in enumerate(data):
+        print('Processing image %d of %d: %s' % (i + 1, len(data), artwork['image_url']))
+
         imagePath = os.path.join(imagesPath, artwork['image'])
         faces = getFaces(imagePath)
         artwork['faces'] = faces
 
-    file.close()
+with open(dataFile, 'w') as file:
+    json = json.dumps(data, indent=4, separators=(',', ': '))
 
-    json.dump(data, dataFile)
+    file.write(json)
