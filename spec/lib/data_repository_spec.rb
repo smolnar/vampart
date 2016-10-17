@@ -13,7 +13,8 @@ RSpec.describe DataRepository do
         title: 'Podobizeň M.M.Hodžu',
         author: ["Klemens, Jozef Božetech"],
         url: 'http://webumenia.sk/dielo/SVK:SNG.O_6269',
-        image_url: 'http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg'
+        image_url: 'http://www.webumenia.sk/images/diela/SNG/13/SVK_SNG.O_6269/SVK_SNG.O_6269.jpeg',
+        image: "0cb56d7d92b31fb8d6295c6a62ffc4641f468b1fd42012d29915d997ee67c000.jpg"
       )
     end
   end

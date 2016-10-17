@@ -19,6 +19,8 @@ class Nasjonalmuseet
   class Parser
     def self.parse(content)
       JSON.parse(content).map do |attributes|
+        BasicLogger.log("Processing \"#{attributes['title']}\" from Nasjonalmuseet API")
+
         {
           id: attributes['article_id'].to_s,
           source: 'nkl.snl.no/api/v1',
