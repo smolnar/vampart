@@ -1,0 +1,174 @@
+@import 'motion-ui/motion-ui';
+
+.first-pane {
+  padding-top: 80px;
+  width: 90%;
+  margin: auto;
+
+  .historical-dracula {
+    height: 600px;
+    background: image_url('historical-dracula') no-repeat;
+    background-size: 100%;
+  }
+
+  .red-square {
+    cursor: pointer;
+    height: 16vw;
+    width: 16vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(190, 3, 22);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg); 
+
+    .text {
+      text-align: center;
+      font-family: DINProBold;
+      font-size: 1.4vw;
+      padding-top: 32px;
+      padding-right: 17%;
+      color: white;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg); 
+      img {
+        margin-top: 20px;
+        padding-left: 5vw;
+        display: block;
+      }
+    }
+
+  }
+
+  .presentational-info {
+    padding-top: 10%;
+    .logo {
+      width: 150px;
+      margin: auto;
+    }
+    .text {
+      width: 250px;
+      margin: auto;
+      margin-top: 20px;
+      padding-left: 15%;
+
+      h2 {
+        font-size: 25px;
+        font-family: DINProBold;
+        line-height: 1;
+      }
+
+      h4 {
+        font-family: DINProRegular;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.blood-drop {
+  width: 10px;
+  margin: auto;
+}
+
+.informational {
+  padding-top: 40px;
+  width: 90%;
+  margin: auto;
+
+  .logo {
+    width: 200px;
+  }
+
+  .index {
+    line-height: 50px;
+    text-align: right;
+    .your-index {
+      font-family: DINProRegular;
+      display: inline;
+    }
+
+    .number {
+      font-family: DINProBold;
+      color: rgb(190, 3, 22);
+      display: inline;
+    }
+  }
+}
+
+.results {
+  border-bottom: 4px solid rgb(190, 3, 22); 
+  padding-bottom: 100px;
+
+  margin-top: 20px;
+
+  .main-image {
+    max-height: 100%;
+  }
+
+  .columns {
+    p {
+      font-family: DINProBold;
+    }
+
+    height: 500px;
+    text-align: center;
+
+    .images {
+      .image {
+
+        p {
+          text-align: center;
+        }
+
+
+      }
+    }
+
+    .slick-next {
+      right: 10px !important;
+    }
+
+    .slick-next:before {
+      color: rgb(190, 3, 22); 
+    }
+
+    .slick-prev {
+      left: 10px !important;
+    }
+
+    .slick-prev:before {
+      color: rgb(190, 3, 22); 
+    }
+    .slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+      color: rgb(190, 3, 22); 
+    }
+  }
+}
+
+.slick-slide {
+  img {
+    display: inline !important;
+  }
+
+  p {
+    font-family: DINProBold;
+  }
+}
+
+@font-face {
+  font-family: 'DINProBold';
+  src: url(DINPro-Bold.otf) format("truetype");
+}
+
+@font-face {
+  font-family: 'DINProRegular';
+  src: url(DINPro-Regular.otf) format("truetype");
+}

@@ -1,0 +1,48 @@
+.first-pane.row
+  .historical-dracula.small-6.columns
+    .red-square
+      .text
+        | UPLOAD YOUR PORTRAIT HERE
+        = image_tag "upload", class: "upload-button"
+  .presentational-info.small-6.columns
+    .logo = image_tag "logo"
+    .text
+      h2 Get to know your life as a vampire
+      h4 Upload your portrait and we will show you historical works of art with your likeness.
+
+.row.blood-drop
+  = image_tag 'blood_drop'
+
+.row.informational
+  .logo.small-6.columns
+    = image_tag "logo"
+  .index.small-6.columns
+    .your-index
+      | Your Vampire index is 
+    .number
+      | 99.9%
+
+.row.results.first-results
+  .small-6.columns
+    p 2016
+    = image_tag "putin", :data => { :open => "exampleModal1" }, class: "main-image"
+  .images.small-6.columns
+    .image
+      p 1490
+      = image_tag "putin_1490"
+    .image
+      p 1550
+      = image_tag "putin_1550"
+    .image
+      p 1654
+      = image_tag "putin_1654"
+    .image
+      p 1914
+      = image_tag "putin_1914"
+    .image
+      p 1942
+      = image_tag "putin_1942"
+
+
+.reveal#exampleModal1 data-reveal=""
+  h1 Hello World
