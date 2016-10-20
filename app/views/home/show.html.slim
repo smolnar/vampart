@@ -1,9 +1,10 @@
 .first-pane.row
   .historical-dracula.small-6.columns
-    .red-square
+    .red-square = form_for @image, html: { multipart: true } do |form|
       .text
-        | UPLOAD YOUR PORTRAIT HERE
-        = image_tag "upload", class: "upload-button"
+        .instructions UPLOAD YOUR PORTRAIT HERE
+        = form.file_field :photo
+        = form.submit "", class: "upload-button"
   .presentational-info.small-6.columns
     .logo = image_tag "logo"
     .text

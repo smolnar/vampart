@@ -12,7 +12,6 @@
   }
 
   .red-square {
-    cursor: pointer;
     height: 16vw;
     width: 16vw;
     position: absolute;
@@ -28,20 +27,27 @@
     -o-transform: rotate(45deg); 
 
     .text {
+      height: 12vw;
+      width: 12vw;
       text-align: center;
       font-family: DINProBold;
       font-size: 1.4vw;
       padding-top: 32px;
-      padding-right: 17%;
       color: white;
       -webkit-transform: rotate(-45deg);
       -moz-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
       -o-transform: rotate(-45deg); 
-      img {
-        margin-top: 20px;
-        padding-left: 5vw;
-        display: block;
+
+      .instructions {
+        padding-bottom: 15px;
+      }
+
+      .upload-button {
+        width: 30px;
+        height: 60px;
+        border: none;
+        background: image_url('upload') no-repeat;
       }
     }
 
