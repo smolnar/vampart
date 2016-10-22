@@ -13,7 +13,6 @@ gem 'dotenv-rails'
 gem 'curb'
 gem 'foundation-rails', '~> 6.2', '>= 6.2.3.0'
 gem 'slim', '~> 3.0', '>= 3.0.7'
-gem 'jquery-slick-rails', '~> 1.6', '>= 1.6.0.2'
 gem 'paperclip', '~> 5.1.0'
 
 # Elasticsearch
