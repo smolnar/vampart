@@ -1,7 +1,10 @@
 class ImagesController < ApplicationController
+  def new
+    @image = Image.new
+  end
+
   def create
     @image = Image.create(image_params)
-    render 'home/show'
   end
 
   private

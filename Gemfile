@@ -11,8 +11,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
 gem 'curb'
-gem 'foundation-rails', '~> 6.2', '>= 6.2.3.0'
 gem 'paperclip', '~> 5.1.0'
+gem 'bootstrap', '~> 4.0.0.alpha5'
 
 # Elasticsearch
 gem 'elasticsearch'
