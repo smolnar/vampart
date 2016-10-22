@@ -1,0 +1,15 @@
+.first-pane.row
+  .historical-dracula.small-6.columns
+    .red-square = form_for @image, html: { multipart: true } do |form|
+      .text
+        .instructions UPLOAD YOUR PORTRAIT HERE
+        = form.file_field :photo
+        = form.submit "", class: "upload-button"
+
+    = image_tag 'blood_drop'
+
+  .presentational-info.small-6.columns
+    .logo = image_tag "logo"
+    .text
+      h2 Get to know your life as a vampire
+      h4 Upload your portrait and we will show you historical works of art with your likeness.
