@@ -12,8 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require slick
- *= require slick-theme
  *= require foundation_and_overrides
 
  */
