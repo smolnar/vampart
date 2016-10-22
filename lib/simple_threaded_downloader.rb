@@ -10,7 +10,7 @@ class SimpleThreadedDownloader
     request.on_failure do |response|
       warn "Download failed (#{response.code}). Retrying #{response.effective_url} ..."
 
-      pool.queue(request)
+      @pool.queue(request)
     end
 
     @pool.queue(request)
