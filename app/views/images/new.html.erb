@@ -13,6 +13,14 @@
           Find your face in historical artworks.
         </small>
       </h1>
+
+      <button id="pick-a-photo" class="btn btn-primary btn-lg btn-upload">
+        Find your face!
+      </button>
+
+      <%= form_for @image, html: { multipart: true } do |f| %>
+        <%= f.file_field :photo, hidden: true %>
+      <% end %>
     </div>
   </div>
 </div>
