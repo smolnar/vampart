@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#show'
-  get 'home/show'
+  root 'images#new'
+
   resources :images
 end
