@@ -1,8 +1,13 @@
 openface:
   build: .
+  working_dir: /root/openface/vampart
+  command: python api.py
   volumes:
     - ./openface/train.py:/root/openface/vampart/train.py
+    - ./openface/api.py:/root/openface/vampart/api.py
     - ./data.json:/root/openface/vampart/data.json
     - ./storage:/root/openface/vampart/storage
+  expose:
+    - "1337"
   ports:
-    - "1337:1337"
+    - "127.0.0.1:1337:1337"
