@@ -12,7 +12,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
 gem 'curb'
 gem 'paperclip', '~> 5.1.0'
+
+# Design
 gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'rails-assets-tether', '>= 1.1.0'
 
 # Elasticsearch
 gem 'elasticsearch'
