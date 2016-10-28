@@ -27,6 +27,7 @@ import numpy as np
 import json
 import re
 from contextlib import contextmanager
+from conditional import conditional
 
 np.set_printoptions(precision = 2)
 
@@ -48,13 +49,13 @@ def measure(message):
     yield
     print 'done ({}s)'.format(time.time() - start)
 
-def getFaces(path, save = True):
+def getFaces(path, save = True, verbose = True):
     name = re.search('(\w+)\.(jpg|png)\Z', path).group(1)
     faces = list()
     image = cv2.imread(path)
 
     try:
-        with measure('Detecting faces'):
+        with conditional(verbose, measure('Detecting faces')):
             rgbImage = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
             boxes = align.getAllFaceBoundingBoxes(rgbImage)
     except cv2.error as e:
@@ -68,7 +69,7 @@ def getFaces(path, save = True):
         if y2 - y1 >= 100:
             filename = '%s-%d.jpg' % (name, i)
 
-            with measure('Extracting face as %s' % filename):
+            with conditional(verbose, measure('Extracting face as %s' % filename)):
                 face = image[y1:y2, x1:x2]
 
                 if save == True:
