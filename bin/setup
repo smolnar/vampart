@@ -34,6 +34,9 @@ chdir APP_ROOT do
   puts "\n== Downloading Images =="
   system! 'bin/rake data:download_images'
 
+  puts "\n== Building Docker Image =="
+  system! 'docker-compose build'
+
   puts "\n== Extracting faces =="
   system!('docker-compose run openface python /root/openface/vampart/train.py')
 
