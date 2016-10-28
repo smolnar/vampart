@@ -1,14 +1,15 @@
-openface:
-  build: .
-  working_dir: /root/openface/vampart
-  command: python api.py
-  volumes:
-    - ./openface/core.py:/root/openface/vampart/core.py
-    - ./openface/train.py:/root/openface/vampart/train.py
-    - ./openface/api.py:/root/openface/vampart/api.py
-    - ./data.json:/root/openface/vampart/data.json
-    - ./storage:/root/openface/vampart/storage
-  expose:
-    - "1337"
-  ports:
-    - "127.0.0.1:1337:1337"
+version: '2'
+services:
+  openface:
+    build: openface/Dockerfile
+    working_dir: /root/openface/vampart
+    command: python api.py
+    volumes:
+      - ./openface/core.py:/root/openface/vampart/core.py
+      - ./openface/train.py:/root/openface/vampart/train.py
+      - ./openface/api.py:/root/openface/vampart/api.py
+      - ./data.json:/root/openface/vampart/data.json
+      - ./storage:/root/openface/vampart/storage
+      - ./public/system/images:/root/openface/vampart/public/system/images
+    expose:
+      - "1337"
