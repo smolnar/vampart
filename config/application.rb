@@ -8,6 +8,6 @@ Bundler.require(*Rails.groups)
 
 module VampART
   class Application < Rails::Application
-    config.autoload_paths << "#{Rails.root}/lib"
+    config.autoload_paths += ["#{config.root}/lib", "#{config.root}/app/services"]
   end
 end

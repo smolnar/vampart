@@ -11,5 +11,5 @@ services:
       - ./data.json:/root/openface/vampart/data.json
       - ./storage:/root/openface/vampart/storage
       - ./public/system/images:/root/openface/vampart/public/system/images
-    expose:
-      - "1337"
+    ports:
+      - "1337:1337"

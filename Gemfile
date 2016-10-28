@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
 gem 'curb'
 gem 'paperclip', '~> 5.1.0'
+gem 'narray'
 
 # Design
 gem 'bootstrap', '~> 4.0.0.alpha5'

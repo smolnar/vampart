@@ -4,13 +4,13 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.create(image_params)
+    @factory = ImageFactory.new(image_params)
 
-    redirect_to @image
-  end
-
-  def show
-    @image = Image.find(params[:id])
+    if @factory.save
+      redirect_to @factory.image
+    else
+      render json: @factory.errors
+    end
   end
 
   private
