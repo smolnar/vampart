@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    no_face_found: 'Oh snap! We could not find a fine in that picture. Be kind and provide another one, pretty please!'
+    invalid_image: 'The uploaded image does not really look like an image, though. Hmm, try another one, please!'

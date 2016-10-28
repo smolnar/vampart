@@ -9,8 +9,15 @@ class ImagesController < ApplicationController
     if @factory.save
       redirect_to @factory.image
     else
-      render json: @factory.errors
+      @factory.image.destroy
+
+      flash[:notice] = @factory.errors
+      redirect_to new_image_url
     end
+  end
+
+  def show
+    @image = Image.find(params[:id])
   end
 
   private

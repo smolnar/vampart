@@ -11,16 +11,16 @@ class ImageFactory
     return unless @image.save
 
     image_path = image.relative_path
-    @model = OpenFace.generate_model(image_path)
+    model = OpenFace.generate_model(image_path)
 
-    return unless @model
+    return unless model
 
-    @image.update_attributes(model: @model)
+    @image.update_attributes(model: model)
   end
 
   def errors
-    return image.errors.full_messages unless image.valid?
-    return 'No face found. Please, provide an image with a face.' unless @model
+    return I18n.t('errors.invalid_image') unless image.valid?
+    return I18n.t('errors.no_face_found') unless image.model?
   end
 end
 
