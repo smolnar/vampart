@@ -24,6 +24,7 @@
     }
 
     h2 {
+      line-height: 1.5;
       color: lighten($gray-dark, 12.5%);
     }
   }
@@ -56,4 +57,35 @@
   text-align: center;
   margin-top: 50px;
   line-height: 2;
+}
+
+.navbar {
+  padding: 0px;
+  background: asset-url('cover.svg') no-repeat;
+  background-size: 100% auto;
+  background-position-y: -150px;
+  height: ($font-size-h4 + 4rem);
+  margin-bottom: 50px;
+
+  .logo {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.timeline {
+  text-align: center;
+
+  .line {
+    color: lighten($gray-light, 30%);
+  }
+
+  .face-note {
+    @extend .text-muted;
+    margin-top: 10px;
+  }
+
+  .photo {
+    height: 400px;
+  }
 }

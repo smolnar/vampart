@@ -1,0 +1,49 @@
+<div class="container timeline">
+  <div class="image">
+    <h1 class="display-2">
+      <%= image.created_at.year %>
+
+      <br />
+
+      <span class="line">
+        |
+      </span>
+    </h1>
+
+    <%= image_tag image.photo.url(:processed), class: 'photo' %>
+
+    <h1 class="display-4">
+      <span class="line">
+        |
+      </span>
+    </h1>
+  </div>
+
+  <% similar_faces.each_with_index do |data, index| %>
+    <div class="artwork">
+      <h1 class="display-4">
+        <%= data[:artwork][:year] || 'Unkown'.html_safe %>
+
+        <br />
+
+        <span class="line">
+          |
+        </span>
+      </h1>
+
+      <%= link_to data[:artwork][:url], class: 'face', target: :_blank do %>
+        <%= image_tag "data:image/jpg;base64,#{Base64.encode64(File.read(Rails.root.join('storage/faces', data[:face][:file])))}" %>
+      <% end %>
+
+      <p class="face-note">Click on the image to see the artwork.</p>
+
+      <% if index < similar_faces.length - 1 %>
+        <h1 class="display-4">
+          <span class="line">
+            |
+          </span>
+        </h1>
+      <% end %>
+    </div>
+  <% end %>
+</div>

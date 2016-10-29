@@ -20,7 +20,9 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
-    @similar_faces = SimilarFacesFinder.for(@image.model)
+    @similar_faces = SimilarFacesFinder.for(@image.model).sort_by { |face|
+      face[:artwork][:year].to_i || -1
+    }.reverse
   end
 
   private

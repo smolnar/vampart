@@ -1,5 +1,11 @@
-<%= image_tag @image.photo.url(:processed) %>
+<div class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        <%= image_tag 'logo.svg' %>
+      </a>
+    </div>
+  </div>
+</div>
 
-<% @similar_faces.each do |data| %>
-  <%= image_tag "data:image/jpg;base64,#{Base64.encode64(File.read(Rails.root.join('storage/faces', data[:face][:file])))}" %>
-<% end %>
+<%= render 'timeline', image: @image, similar_faces: @similar_faces %>
