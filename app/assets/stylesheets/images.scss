@@ -80,6 +80,12 @@
     color: lighten($gray-light, 30%);
   }
 
+  .face {
+    img {
+      max-height: 200px;
+    }
+  }
+
   .face-note {
     @extend .text-muted;
     margin-top: 10px;
@@ -88,4 +94,12 @@
   .photo {
     height: 400px;
   }
+}
+
+.error {
+  @extend .alert;
+  @extend .alert-danger;
+
+  border-radius: 0;
+  text-align: center;
 }

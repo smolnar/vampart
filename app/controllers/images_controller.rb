@@ -21,8 +21,11 @@ class ImagesController < ApplicationController
   def show
     @image = Image.find(params[:id])
     @similar_faces = SimilarFacesFinder.for(@image.model).sort_by { |face|
-      face[:artwork][:year].to_i || -1
+      face[:artwork][:year].to_i
     }.reverse
+
+    years = @similar_faces.map { |e| e[:artwork][:year].to_i }.compact
+    @score = VampireScoreEvaluator.evaluate(years)
   end
 
   private
