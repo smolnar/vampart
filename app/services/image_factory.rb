@@ -18,7 +18,7 @@ class ImageFactory
     @image.update_attributes(model: model)
   end
 
-  def errors
+  def error_message
     return I18n.t('errors.invalid_image') unless image.valid?
     return I18n.t('errors.no_face_found') unless image.model?
   end

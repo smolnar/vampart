@@ -1,1 +1,5 @@
-<%= image_tag @image.photo %>
+<%= image_tag @image.photo.url(:processed) %>
+
+<% @similar_faces.each do |data| %>
+  <%= image_tag "data:image/jpg;base64,#{Base64.encode64(File.read(Rails.root.join('storage/faces', data[:face][:file])))}" %>
+<% end %>
