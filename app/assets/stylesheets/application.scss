@@ -16,3 +16,7 @@
 @import 'bootstrap/variables';
 @import 'bootstrap';
 @import 'images';
+
+html, body {
+  font-weight: 300 !important;
+}
