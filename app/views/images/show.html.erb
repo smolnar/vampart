@@ -1,11 +1,19 @@
 <div class="navbar">
   <div class="container">
-    <div class="logo">
-      <a href="/">
-        <%= image_tag 'logo.svg' %>
-      </a>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="logo">
+          <a href="/">
+            <%= image_tag 'logo.svg' %>
+          </a>
+        </div>
+      </div>
+
+      <h5 class="col-xs-6 score">
+        A probability of you being a vampire is <b class="text-primary"><%= @image.score %>%</b>
+      </h5>
     </div>
-  </div>
+   </div>
 </div>
 
-<%= render 'timeline', image: @image, similar_faces: @similar_faces %>
+<%= render 'timeline', image: @image, similar_faces: @image.faces %>

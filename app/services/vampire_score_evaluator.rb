@@ -1,10 +1,12 @@
 class VampireScoreEvaluator
   def self.evaluate(years)
-    years = years.sort
-    youngest, oldest = [years.first, years.last]
+    oldest = years.sort.first
 
-    return unless oldest && youngest
+    return unless oldest
 
-    (youngest - oldest)
+    score = (Time.now.year - oldest).abs
+
+    return score if score < 100
+    return 99.9
   end
 end

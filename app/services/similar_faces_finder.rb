@@ -14,6 +14,8 @@ class SimilarFacesFinder
       }
     }.flatten
 
-    matches.sort_by { |e| e[:match] }.first(10)
+    matches.sort_by { |e| e[:match] }.first(10).sort_by { |e|
+      e[:artwork][:year].to_i
+    }.reverse
   end
 end

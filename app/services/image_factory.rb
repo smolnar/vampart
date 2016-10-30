@@ -8,14 +8,22 @@ class ImageFactory
   def save
     @image = Image.new(attributes)
 
-    return unless @image.save
+    return unless image.save
 
     image_path = image.relative_path
     model = OpenFace.generate_model(image_path)
 
     return unless model
 
-    @image.update_attributes(model: model)
+    similar_faces = SimilarFacesFinder.for(model)
+    years = similar_faces.map { |e| e[:artwork][:year].to_i if e[:artwork][:year] }.compact
+    score = VampireScoreEvaluator.evaluate(years)
+
+    @image.update_attributes(
+      model: model,
+      faces: similar_faces,
+      score: score
+    )
   end
 
   def error_message

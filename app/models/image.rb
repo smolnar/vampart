@@ -7,4 +7,8 @@ class Image < ApplicationRecord
   def relative_path
     photo.path(:processed).gsub("#{Rails.root}/", '')
   end
+
+  def faces
+    @symbolized_faces ||= read_attribute(:faces).map(&:deep_symbolize_keys)
+  end
 end

@@ -67,9 +67,13 @@
   height: ($font-size-h4 + 4rem);
   margin-bottom: 50px;
 
-  .logo {
+  .logo, .score {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .score {
+    text-align: right;
   }
 }
 
@@ -77,7 +81,10 @@
   text-align: center;
 
   .line {
-    color: lighten($gray-light, 30%);
+    height: 75px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-left: 2px solid lighten($gray-light, 30%);
   }
 
   .face {
