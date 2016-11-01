@@ -8,7 +8,7 @@ app = Flask(__name__)
 fileDir = os.path.dirname(os.path.realpath(__file__))
 
 @app.route('/')
-def getFacialModel():
+def getFacialModels():
     path = request.args.get('path')
     imagePath = os.path.join(fileDir, path)
     faces = getFaces(imagePath, save = False)
