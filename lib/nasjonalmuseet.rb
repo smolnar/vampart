@@ -26,6 +26,7 @@ class Nasjonalmuseet
           source: 'nkl.snl.no/api/v1',
           title: attributes['title'],
           year: nil, # TODO what to do?
+          dating: nil, # TODO what to do?
           url: attributes['article_url'],
           image_url: attributes['first_image_url']
         }

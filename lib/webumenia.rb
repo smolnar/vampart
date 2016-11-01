@@ -59,10 +59,14 @@ class Webumenia
 
   class Mapper
     def self.map(attributes)
+      match = attributes['dating'].match(/\d+/)
+      year = match ? match[0].to_i : nil
+
       {
         id: attributes['id'],
         source: 'api.webumenia.sk',
-        year: attributes['dating'],
+        dating: attributes['dating'],
+        year: year,
         title: attributes['title'],
         author: attributes['author'],
         url: "http://webumenia.sk/dielo/#{attributes['id']}"
