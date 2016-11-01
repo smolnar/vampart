@@ -1,10 +1,10 @@
 <div class="container timeline">
-  <div class="artwork">
+  <div class="image">
     <h1 class="display-2">
       <%= image.created_at.year %>
     </h1>
 
-    <%= image_tag image.photo.url(:processed), class: 'photo' %>
+    <%= image_tag image.processed_photo_url, class: 'photo' %>
 
     <div class="row">
       <div class="col-xs-6"></div>
@@ -13,7 +13,7 @@
   </div>
 
   <% similar_faces.each_with_index do |data, index| %>
-    <div class="artwork">
+    <div class="face">
       <h1 class="display-4">
         <%= data[:artwork][:year] || 'Unkown'.html_safe %>
       </h1>

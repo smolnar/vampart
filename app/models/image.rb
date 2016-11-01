@@ -11,4 +11,8 @@ class Image < ApplicationRecord
   def faces
     @symbolized_faces ||= read_attribute(:faces).map(&:deep_symbolize_keys)
   end
+
+  def processed_photo_url
+    photo.url(:processed)
+  end
 end
