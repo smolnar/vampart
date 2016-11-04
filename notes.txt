@@ -1,1 +1,2 @@
 - Resolve OpenCV Error
+- fix pool in on error
