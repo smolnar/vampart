@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
     @factory = ImageFactory.new(image_params)
 
     if @factory.save
-      redirect_to @factory.image
+      redirect_to image_url(@factory.image.uid)
     else
       message = @factory.error_message
 
@@ -19,7 +19,7 @@ class ImagesController < ApplicationController
   end
 
   def show
-    @image = Image.find(params[:id])
+    @image = Image.find_by!(uid: params[:id])
   end
 
   private

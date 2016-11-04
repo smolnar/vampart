@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030192632) do
+ActiveRecord::Schema.define(version: 20161104203308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20161030192632) do
     t.float    "model",                           array: true
     t.float    "score"
     t.json     "faces"
+    t.string   "uid",                null: false
+    t.index ["uid"], name: "index_images_on_uid", unique: true, using: :btree
   end
 
 end
