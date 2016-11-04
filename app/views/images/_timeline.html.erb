@@ -1,14 +1,17 @@
 <div class="container timeline">
   <div class="image">
-    <h1 class="display-2">
+    <h1 class="display-3">
       <%= image.created_at.year %>
     </h1>
 
     <%= image_tag image.processed_photo_url, class: 'photo' %>
 
+    <% if note %>
+      <div class="face-note"><%= note %></div>
+    <% end %>
+
     <div class="row">
-      <div class="col-xs-6"></div>
-      <div class="line col-xs-6"></div>
+      <%= render 'line' %>
     </div>
   </div>
 
@@ -25,10 +28,7 @@
       <div class="face-note">Click on the image to see the artwork.</div>
 
       <% if index < similar_faces.length - 1 %>
-        <div class="row">
-          <div class="col-xs-6"></div>
-          <div class="line col-xs-6"></div>
-        </div>
+        <%= render 'line' %>
       <% end %>
     </div>
   <% end %>

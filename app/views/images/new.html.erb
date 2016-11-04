@@ -15,7 +15,7 @@
     </div>
 
     <div class="headline">
-      <h1 class="display-3">
+      <h1 class="display-2">
         How vampire are you?
       </h1>
 
@@ -31,10 +31,51 @@
         <%= f.file_field :photo, hidden: true %>
       <% end %>
 
-      <%= image_tag 'blood-drop.svg', class: 'blood-drop' %>
+      <!--
+        <%= image_tag 'blood-drop.svg', class: 'blood-drop' %>
+        <p class="text-muted">See More</p>
+      -->
     </div>
   </div>
 </div>
 
 
-<%= render 'timeline', image: LandingPageImage, similar_faces: LandingPageImage.similar_faces %>
+<div id="how-it-works" class="container">
+  <h1 class="display-4 title">How it works</h1>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1>Data & Artworks</h1>
+
+      <p>
+        We gather historical artworks from the <a href="http://www.sng.sk/">Slovak National Gallery</a> and <a href="http://www.nasjonalmuseet.no/">Nasjonalmuseet</a> in Norway through their APIs. We evaluate more than 2 000 artworks labeled as portraits.
+      </p>
+    </div>
+  </div>
+
+  <%= render 'line' %>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1>Face Recognition</h1>
+
+      <p>
+        In order to extract faces, we use opensource machine learning framework &ndash; <a href="http://cmusatyalab.github.io/openface/">OpenFace</a>. OpenFace utilizes deep neural networks for face extraction and represents face of an individual as 128-dimensional hypersphere. The comparision is done by simple difference between vectors.
+      </p>
+    </div>
+  </div>
+
+  <%= render 'line' %>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1>Real-time Computation</h1>
+
+      <p>
+        All of the portraits are preprocessed and each model of face extracted from the artwork is cached in order to speed up the computation. The search for the most similar faces is done within a second and the similarity takes about 200 ms in an average to compute.
+      </p>
+    </div>
+  </div>
+</div>
+
+<%= render 'timeline', image: LandingPageImage, similar_faces: LandingPageImage.similar_faces, note: 'Source: http://greatnewsmag.com/' %>
