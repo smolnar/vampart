@@ -19,4 +19,4 @@
 .env.local
 storage/images/*.jpg
 storage/faces/*.jpg
-public/system/*
+public/uploads/*
