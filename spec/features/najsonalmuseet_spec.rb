@@ -13,6 +13,7 @@ RSpec.describe 'Najsonalmuseet API' do
       source: 'nkl.snl.no/api/v1',
       url: 'https://snl.no/portrettkunst',
       year: nil,
+      dating: nil,
       title: 'portrettkunst',
       image_url: 'https://media.snl.no/system/images/9019/portrettkunst2.jpg'
     )

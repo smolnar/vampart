@@ -11,7 +11,8 @@ RSpec.describe 'Webumenia API' do
     expect(item).to eql(
       id: 'SVK:SNG.O_6269',
       source: 'api.webumenia.sk',
-      year: '1846',
+      year: 1846,
+      dating: '1846',
       title: 'Podobizeň M.M.Hodžu',
       author: ['Klemens, Jozef Božetech'],
       url: 'http://webumenia.sk/dielo/SVK:SNG.O_6269',
