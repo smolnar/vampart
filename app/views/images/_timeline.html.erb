@@ -33,7 +33,7 @@
   <% similar_faces.each_with_index do |data, index| %>
     <div class="face">
       <h1 class="display-4">
-        <%= data[:artwork][:year] || 'Unkown'.html_safe %>
+        <%= data[:artwork][:dating] || 'Unkown'.html_safe %>
       </h1>
 
       <%= link_to data[:artwork][:url], class: 'face', target: :_blank do %>
