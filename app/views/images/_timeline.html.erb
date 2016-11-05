@@ -36,7 +36,7 @@
         <%= data[:artwork][:dating] || 'Unkown'.html_safe %>
       </h1>
 
-      <%= link_to data[:artwork][:url], class: 'face', target: :_blank do %>
+      <%= link_to data[:artwork][:url], target: :_blank do %>
         <%= image_tag "data:image/jpg;base64,#{Base64.encode64(File.read(Rails.root.join('storage/faces', data[:face][:file])))}" %>
       <% end %>
 

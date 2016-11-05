@@ -10,7 +10,7 @@ services:
       - ./openface/api.py:/root/openface/vampart/api.py
       - ./data.json:/root/openface/vampart/data.json
       - ./storage:/root/openface/vampart/storage
-      - ./public/system/images:/root/openface/vampart/public/system/images
+      - ./public/uploads/images:/root/openface/vampart/public/uploads/images
       - ./public/landing-page-image.jpeg:/root/openface/vampart/public/landing-page-image.jpeg
     ports:
       - "1337:1337"
