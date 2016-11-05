@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><%= content_for(:title) ? yield(:title) : 'VampArt' %></title>
-    <meta name="author" content="Lubomír Fundarek, Matej Lukášik, Samuel Molnár, Pavol Truben">
-    <meta name="keywords" content="vampires, face similarity, sng art data, art data, hackathon, machine learning, neural networks, openface">
+    <meta name="author" content="Samuel Molnár, Pavol Truben, Matej Lukášik, Lubomír Fundarek">
+    <meta name="keywords" content="vampires, face similarity, face recognition, sng, art data, hackathon, machine learning, deep neural networks, openface, hypesphere, nasjonalmuseet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="mask-icon" sizes="any" href="/assets/images/favicon.svg" />
-    <link rel="apple-touch-icon" href="/assets/images/touchicon-06566391462a909cefdc164627ec9117.png" />
+
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= favicon_link_tag 'touchicon.png', rel: 'apple-touch-icon' %>
+    <%= favicon_link_tag 'blood-drop.svg', rel: 'mask-icon' %>
 
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
