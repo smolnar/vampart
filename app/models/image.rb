@@ -22,7 +22,7 @@ class Image < ApplicationRecord
 
   def generate_uid
     self.uid = loop do
-      uid = SecureRandom.hex(32)
+      uid = SecureRandom.urlsafe_base64
 
       break uid unless Image.where(uid: uid).exists?
     end
