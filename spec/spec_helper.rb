@@ -25,6 +25,7 @@ VCR.configure do |config|
   config.hook_into :webmock # or :fakeweb
   config.configure_rspec_metadata!
   config.filter_sensitive_data('WEBUMENIA_ELASTICSEARCH_URL') { ENV['WEBUMENIA_ELASTICSEARCH_URL'] }
+  config.ignore_localhost = true
 end
 
 RSpec.configure do |config|
