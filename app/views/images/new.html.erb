@@ -55,7 +55,7 @@
       <h1>Face Recognition</h1>
 
       <p>
-        In order to extract faces, we use opensource machine learning framework &ndash; <a href="http://cmusatyalab.github.io/openface/">OpenFace</a>. OpenFace utilizes deep neural networks for face extraction and represents face of an individual as 128-dimensional hypersphere. The comparision is done by simple difference between vectors.
+        In order to extract faces, we use opensource machine learning framework &ndash; <a href="http://cmusatyalab.github.io/openface/">OpenFace</a>. OpenFace utilizes deep neural networks for face recognition and represents a face of an individual as 128-dimensional hypersphere. The comparision is done by simple difference between two hyperspheres.
       </p>
     </div>
   </div>
@@ -67,7 +67,7 @@
       <h1>Real-time Computation</h1>
 
       <p>
-        All of the portraits are preprocessed and a model of a face extracted from the portrait is cached in order to speed up the computation. The search for the most similar faces is done within a second and the similarity computation takes about 200ms in an average.
+        All of the portraits are preprocessed and a model of a face extracted from the portrait is cached in order to speed up the computation. The search for the most similar faces is done within a second and the similarity computation takes about 50ms in an average on more than 1 200 extracted faces.
       </p>
     </div>
   </div>
