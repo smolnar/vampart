@@ -132,6 +132,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+    oj (2.12.14)
     paperclip (5.1.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -177,6 +178,8 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    rollbar (2.13.3)
+      multi_json
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -258,12 +261,14 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   narray
+  oj (~> 2.12.14)
   paperclip (~> 5.1.0)
   pg (~> 0.18)
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-assets-tether (>= 1.1.0)
+  rollbar
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   spring

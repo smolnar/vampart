@@ -83,6 +83,16 @@
 }
 
 .timeline {
+  .social-buttons {
+    margin-top: 20px;
+
+    iframe, span {
+      vertical-align: top !important;
+    }
+  }
+}
+
+.timeline {
   text-align: center;
 
   .face {

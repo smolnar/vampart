@@ -24,6 +24,10 @@ gem 'elasticsearch'
 # Parallel downloads
 gem 'typhoeus'
 
+# Errors
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
+
 group :development, :test do
   gem 'pry-rails'
 end

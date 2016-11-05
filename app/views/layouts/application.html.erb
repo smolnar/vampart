@@ -12,6 +12,10 @@
     <%= favicon_link_tag 'touchicon.png', rel: 'apple-touch-icon' %>
     <%= favicon_link_tag 'blood-drop.svg', rel: 'mask-icon' %>
 
+    <meta property="og:title" content="VampArt - Find Yourself in Historical Artworks"/>
+    <meta property="og:description" content="Find your look-alikes in artworks from national galleries of Slovak Republic and Norway. Try it out and upload your photo!">
+    <meta property="og:image" content="<%= content_for(:preview_image) ? yield(:preview_image) : asset_path('preview.png') %>" />
+
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400' %>
@@ -20,6 +24,26 @@
 
   <body>
     <%= yield %>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-86876745-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <footer>
       <div class="container">

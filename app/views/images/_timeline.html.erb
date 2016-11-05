@@ -8,7 +8,22 @@
 
     <% if note %>
       <div class="face-note"><%= note %></div>
+    <% else %>
+      <ul class="social-buttons list-inline">
+        <li class="list-inline-item">
+          <div>
+            <div class="fb-share-button" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php">Share</a></div>
+          </div>
+        </li>
+
+        <li class="list-inline-item">
+          <div style="vertical-align: bottom;">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Look at my look-alikes from historical artworks @ VampArt ..." data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </li>
+      </ul>
     <% end %>
+
 
     <div class="row">
       <%= render 'line' %>
