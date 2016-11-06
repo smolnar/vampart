@@ -1,5 +1,9 @@
+# set path to application
+app_dir = File.expand_path("../..", __FILE__)
+shared_dir = "#{app_dir}/shared"
+working_directory app_dir
+
 worker_processes 3
-working_directory File.expand_path("../..", __FILE__)
 
 listen "#{shared_dir}/sockets/unicorn.sock", backlog: 64
 
