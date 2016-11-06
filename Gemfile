@@ -48,6 +48,7 @@ group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'webmock', '~> 2.1.0'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'vcr'
 end
