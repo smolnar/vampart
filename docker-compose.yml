@@ -1,7 +1,7 @@
 version: '2'
 services:
   openface:
-    build: openface/Dockerfile
+    build: ./openface
     working_dir: /root/openface/vampart
     command: python api.py
     volumes:
