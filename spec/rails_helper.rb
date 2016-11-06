@@ -96,7 +96,6 @@ RSpec.configure do |config|
   end
 
   config.append_after(:each) do
-    require 'pry'; binding.pry
     Image.find_each { |e| e.photo.clear }
 
     DatabaseCleaner.clean

@@ -15,7 +15,6 @@ RSpec.describe 'Upload Image', type: :feature, js: true do
   end
 
   it 'uploads an image without a face' do
-    require 'pry'; binding.pry
     first('#image_photo', visible: false).send_keys(Rails.root.join('spec/fixtures/mountains.jpeg'))
 
     expect(page).to have_content('Oh snap! We could not find a face in that picture. Be kind and provide another one, pretty please!')
