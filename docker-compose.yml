@@ -1,11 +1,10 @@
 version: '2'
 services:
   openface:
+    container_name: vampart_openface_api
     build: ./openface
     working_dir: /root/openface/vampart
     command: python api.py
-    networks:
-      - openface_default
     volumes:
       - ./openface/core.py:/root/openface/vampart/core.py
       - ./openface/train.py:/root/openface/vampart/train.py
