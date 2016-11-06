@@ -37,7 +37,13 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'capistrano-rails'
+
+  # Deployment
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-sidekiq'
 end
 
 group :development, :test do
@@ -52,3 +58,5 @@ group :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'vcr'
 end
+
+gem 'unicorn'
