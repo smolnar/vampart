@@ -1,20 +1,19 @@
 # set path to application
 app_dir = File.expand_path('../../..', __FILE__)
-shared_dir = "#{app_dir}/shared"
 working_directory app_dir
 
 worker_processes 3
 
-listen "#{shared_dir}/sockets/unicorn.sock", backlog: 64
+listen "#{app_dir}/tmp/unicorn.sock", backlog: 64
 
 timeout 60
 
 # Logging
-stderr_path "#{shared_dir}/log/unicorn.stderr.log"
-stdout_path "#{shared_dir}/log/unicorn.stdout.log"
+stderr_path "#{app_dir}/log/unicorn.stderr.log"
+stdout_path "#{app_dir}/log/unicorn.stdout.log"
 
 # PID Location
-pid "#{shared_dir}/pids/unicorn.pid"
+pid "#{app_dir}/pids/unicorn.pid"
 
 # combine Ruby 2.0.0dev or REE with "preload_app true" for memory savings
 # http://rubyenterpriseedition.com/faq.html#adapt_apps_for_cow
