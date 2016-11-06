@@ -18,5 +18,5 @@ production:
   encoding: unicode
   database: vampart_production
   pool: 5
-  username: <%= ENV['VAMPART_DATABASE_USERNAME'] %>
+  username: vampart
   password: <%= ENV['VAMPART_DATABASE_PASSWORD'] %>
