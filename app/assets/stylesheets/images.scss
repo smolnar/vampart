@@ -97,7 +97,8 @@
 
   .face {
     img {
-      height: 400px;
+      @extend .img-fluid;
+      width: 100%;
     }
   }
 
@@ -107,7 +108,8 @@
   }
 
   .photo {
-    height: 500px;
+    @extend .img-fluid;
+    max-height: 500px;
   }
 }
 

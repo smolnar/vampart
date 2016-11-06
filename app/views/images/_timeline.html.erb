@@ -4,7 +4,11 @@
       <%= image.created_at.year %>
     </h1>
 
-    <%= image_tag image.processed_photo_url, class: 'photo' %>
+    <div class="row">
+      <div class="col-sm-12 col-md-8 offset-md-2 col-xs-12">
+        <%= image_tag image.processed_photo_url, class: 'photo' %>
+      </div>
+    </div>
 
     <% if note %>
       <div class="face-note"><%= note %></div>
@@ -36,9 +40,13 @@
         <%= data[:artwork][:dating] || 'Unkown'.html_safe %>
       </h1>
 
-      <%= link_to data[:artwork][:url], target: :_blank do %>
-        <%= image_tag "data:image/jpg;base64,#{Base64.encode64(File.read(Rails.root.join('storage/faces', data[:face][:file])))}" %>
-      <% end %>
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2 col-md-4 offset-md-4 col-xs-10 offset-xs-1">
+          <%= link_to data[:artwork][:url], target: :_blank do %>
+            <%= image_tag "data:image/jpg;base64,#{Base64.encode64(File.read(Rails.root.join('storage/faces', data[:face][:file])))}" %>
+          <% end %>
+        </div>
+      </div>
 
       <div class="face-note">Click on the image to see the artwork.</div>
 

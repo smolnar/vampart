@@ -55,7 +55,6 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  #
 
   # DatabaseCleaner
   config.before(:suite) do
@@ -96,8 +95,8 @@ RSpec.configure do |config|
   end
 
   config.append_after(:each) do
-    Image.find_each { |e| e.photo.clear }
+    Image.find_each { |e| e.photo.destroy }
 
     DatabaseCleaner.clean
   end
- end
+end
