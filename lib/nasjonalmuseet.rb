@@ -5,7 +5,7 @@ class Nasjonalmuseet
     results = Array.new
 
     loop do
-      data = Parser.parse(Curl.get(url).body_str)
+      data = Parser.parse(Curl::Easy.perform(url).body_str)
 
       break if data.empty? || (offset * 10) >= size
 

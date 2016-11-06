@@ -4,7 +4,7 @@ RSpec.describe 'Najsonalmuseet API' do
   it 'provides all portraits', :vcr do
     data = Nasjonalmuseet.get('portrett', size: 50)
 
-    expect(data.size).to eql(20)
+    expect(data.size).to eql(33)
 
     item = data.first
 

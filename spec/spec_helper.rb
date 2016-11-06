@@ -17,7 +17,10 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require 'webmock/rspec'
 require 'vcr'
+
+WebMock.disable_net_connect!(allow_localhost: true, allow: ['0.0.0.0:1337'])
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'

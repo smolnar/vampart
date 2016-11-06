@@ -279,7 +279,7 @@ DEPENDENCIES
   capistrano-rails
   capybara
   coffee-rails (~> 4.2)
-  curb
+  curb (~> 0.9.3)
   database_cleaner
   dotenv-rails
   elasticsearch

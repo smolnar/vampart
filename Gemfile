@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
-gem 'curb'
+gem 'curb', '~> 0.9.3'
 gem 'paperclip', '~> 5.1.0'
 gem 'narray'
 
