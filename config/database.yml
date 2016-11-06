@@ -7,11 +7,11 @@ default: &default
 
 development:
   <<: *default
-  database: vampART_development
+  database: vampart_development
 
 test:
   <<: *default
-  database: vampART_test
+  database: vampart_test
 
 production:
   adapter: postgresql
