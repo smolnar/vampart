@@ -44,6 +44,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-sidekiq'
+  gem 'capistrano3-unicorn'
 end
 
 group :development, :test do
