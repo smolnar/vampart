@@ -13,7 +13,7 @@ stderr_path "#{app_dir}/log/unicorn.stderr.log"
 stdout_path "#{app_dir}/log/unicorn.stdout.log"
 
 # PID Location
-pid "#{app_dir}/pids/unicorn.pid"
+pid "#{app_dir}/tmp/pids/unicorn.pid"
 
 # combine Ruby 2.0.0dev or REE with "preload_app true" for memory savings
 # http://rubyenterpriseedition.com/faq.html#adapt_apps_for_cow
