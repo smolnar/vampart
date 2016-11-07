@@ -14,4 +14,4 @@ services:
       - ./public/uploads/images:/root/openface/vampart/public/uploads/images
       - ./public/landing-page-image.jpeg:/root/openface/vampart/public/landing-page-image.jpeg
     ports:
-      - "1337:1337"
+      - "127.0.0.1:1337:1337"
