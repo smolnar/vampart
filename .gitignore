@@ -17,6 +17,4 @@
 .byebug_history
 
 .env.local
-storage/images/*.jpg
-storage/faces/*.jpg
 public/uploads/*
