@@ -20,4 +20,5 @@ services:
 
 networks:
   vampart_openface_api:
-    driver: bridge
+    external:
+      name: vampart_openface_api
