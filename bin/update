@@ -21,6 +21,15 @@ chdir APP_ROOT do
   puts "\n== Updating database =="
   system! 'bin/rails db:migrate'
 
+  puts "\n== Downloading data =="
+  system!('bin/rake data:get')
+
+  puts "\n== Downloading Images =="
+  system! 'bin/rake data:download_images'
+
+  puts "\n== Extracting faces =="
+  system!('docker-compose run openface python /root/openface/vampart/train.py')
+
   puts "\n== Removing old logs and tempfiles =="
   system! 'bin/rails log:clear tmp:clear'
 
