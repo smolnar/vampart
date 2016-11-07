@@ -23,7 +23,7 @@ Run `rails server` and `docker-compose up` to start thing up.
 
 ## License
 
-**Artworks**: 
+**Artworks**:
 
 Please, refer to respective websites of galleries for more information on license. We guarantee nothing :scream:.
 
