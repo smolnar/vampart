@@ -13,3 +13,8 @@ module VampART
 end
 
 require 'data_repository'
+require 'basic_logger'
+require 'data_repository'
+require 'nasjonalmuseet'
+require 'simple_threaded_downloader'
+require 'webumenia'
