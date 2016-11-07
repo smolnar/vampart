@@ -12,7 +12,7 @@ before_script:
   - psql -c 'create database vampart_test;' -U postgres
   - bundle exec rake db:test:load_schema
   - bundle exec rake db:seed
-  - mkdir public/uploads/images
+  - mkdir -p public/uploads/images
   - docker-compose up -d
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
