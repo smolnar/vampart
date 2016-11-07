@@ -1,5 +1,7 @@
 # VampArt
 
+[![Build Status](https://travis-ci.org/smolnar/vampart.svg?branch=master)](https://travis-ci.org/smolnar/vampart)
+
 How vampire are you? A machine-learning/art data project initiated during [Art Data Hackathon](a href="http://hackathon.sng.sk/") and kindly using artworks from the [Slovak National Gallery](http://www.sng.sk) and [Nasjonalmuseet collections](http://www.nasjonalmuseet.no/) to find your look-alikes in historical artworks.
 
 
