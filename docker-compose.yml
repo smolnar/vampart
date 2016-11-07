@@ -2,6 +2,8 @@ version: '2'
 services:
   openface:
     container_name: vampart_openface_api
+    networks:
+      - vampart_openface_api
     build: ./openface
     working_dir: /root/openface/vampart
     command: python api.py
@@ -15,3 +17,7 @@ services:
       - ./public/landing-page-image.jpeg:/root/openface/vampart/public/landing-page-image.jpeg
     ports:
       - "127.0.0.1:1337:1337"
+
+networks:
+  vampart_openface_api:
+    driver: bridge
