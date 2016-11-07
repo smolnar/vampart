@@ -12,7 +12,7 @@ set :rbenv_ruby, File.read('.ruby-version').strip
 
 # Links
 set :linked_files, fetch(:linked_files, []).push('.env')
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/downloads', 'vendor/bundle', 'storage', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/downloads', 'vendor/bundle', 'public/uploads')
 
 set :keep_releases, 2
 set :ssh_options, {
