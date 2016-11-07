@@ -10,6 +10,8 @@ module VampART
   class Application < Rails::Application
     config.autoload_paths += ["#{config.root}/lib", "#{config.root}/app/services"]
 
-    require 'lib/data_repository'
+    Dir[Rails.root.join('lib/*.rb')].each do |lib|
+      require lib
+    end
   end
 end
