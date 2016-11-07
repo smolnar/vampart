@@ -21,5 +21,4 @@ script:
   - bundle exec rspec spec
 
 addons:
-  - docker
-  - postgresql: '9.4'
+  postgresql: '9.4'
