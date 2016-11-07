@@ -27,7 +27,7 @@ Run `rails server` and `docker-compose up` to start thing up.
 
 **Artworks**:
 
-Please, refer to respective websites of galleries for more information on license. We own and guarantee nothing :scream:.
+Please, refer to respective websites of galleries for more information on license. All of the artworks are used purely for non-commercial and research activities in scope of this project. We own and guarantee nothing :scream:.
 
 **Source Code:**
 
