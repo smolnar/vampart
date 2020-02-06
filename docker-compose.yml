@@ -16,14 +16,10 @@ services:
     depends_on:
       - db
       - openface
+
   openface:
     build: ./openface
-    working_dir: /root/openface/vampart
-    command: python api.py
     volumes:
-      - ./openface/core.py:/root/openface/vampart/core.py
-      - ./openface/train.py:/root/openface/vampart/train.py
-      - ./openface/api.py:/root/openface/vampart/api.py
       - ./data.json:/root/openface/vampart/data.json
       - ./storage:/root/openface/vampart/storage
       - ./public/uploads/images:/root/openface/vampart/public/uploads/images
