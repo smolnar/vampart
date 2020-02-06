@@ -11,17 +11,13 @@ How vampire are you? A machine-learning/art data project initiated during [Art D
 * Docker
 * Ruby
 
-## Installation
+## Running
 
-Run `bin/setup` to set everything up.
+Run `docker-compose up` followed by `docker-compose exec web rails db:setup` to start things up and initialize your database.
 
 In order to update the data and download all the new images, run `bin/update`.
 
 **Note**: *Bear in mind that updating the data requires a a lot of CPU power, so don't hesitate to jack up the performance of your Docker VM.*
-
-## Running
-
-Run `rails server` and `docker-compose up` to start thing up.
 
 ## License
 
