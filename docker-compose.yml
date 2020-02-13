@@ -1,24 +1,31 @@
-version: '2'
+version: '3.7'
 services:
-  openface:
-    container_name: vampart_openface_api
-    networks:
-      - vampart_openface_api
-    build: ./openface
-    working_dir: /root/openface/vampart
-    command: python api.py
+  web:
+    build: .
+    environment:
+      OPENFACE_API_URL: "http://openface:1337"
+      SECRET_KEY_BASE: secret_key
+      DATABASE_URL: postgres://vampart:@db/vampart
+      RAILS_ENV: production
+      RAILS_SERVE_STATIC_FILES: 1
     volumes:
-      - ./openface/core.py:/root/openface/vampart/core.py
-      - ./openface/train.py:/root/openface/vampart/train.py
-      - ./openface/api.py:/root/openface/vampart/api.py
+      - ./storage:/storage
+      - ./public:/public
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - openface
+
+  openface:
+    build: ./openface
+    volumes:
       - ./data.json:/root/openface/vampart/data.json
       - ./storage:/root/openface/vampart/storage
       - ./public/uploads/images:/root/openface/vampart/public/uploads/images
       - ./public/landing-page-image.jpeg:/root/openface/vampart/public/landing-page-image.jpeg
-    ports:
-      - "127.0.0.1:1337:1337"
 
-networks:
-  vampart_openface_api:
-    external:
-      name: vampart_openface_api
+  db:
+    image: postgres:9.6.16-alpine
+    environment:
+      POSTGRES_USER: vampart

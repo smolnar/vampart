@@ -2,6 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV['DATABASE_HOST'] %>
   username: postgres
   password:
 
@@ -14,9 +15,4 @@ test:
   database: vampart_test
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: vampart_production
-  pool: 5
-  username: <%= ENV['VAMPART_DATABASE_USERNAME'] %>
-  password: <%= ENV['VAMPART_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
