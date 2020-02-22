@@ -34,7 +34,7 @@ end
 
 class OpenFace
   def self.generate_model(path)
-    response = Curl::Easy.perform("http://0.0.0.0:1337?path=#{path}")
+    response = Curl::Easy.perform("#{ENV.fetch("OPENFACE_API_URL")}?path=#{path}")
     face = JSON.parse(response.body_str)[0]
 
     face ? face['model'] : nil
