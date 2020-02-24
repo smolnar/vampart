@@ -13,9 +13,9 @@ How vampire are you? A machine-learning/art data project initiated during [Art D
 
 ## Running
 
-Run `docker-compose up` followed by `docker-compose exec web rails db:setup` to start things up and initialize your database.
+Run `docker-compose up` followed by `docker-compose exec web bin/setup` to start things up and setup everything.
 
-In order to update the data and download all the new images, run `bin/update`.
+In order to update the data and download all the new images, run `docker-compose exec web bin/update`.
 
 **Note**: *Bear in mind that updating the data requires a a lot of CPU power, so don't hesitate to jack up the performance of your Docker VM.*
 
