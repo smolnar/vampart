@@ -1,6 +1,5 @@
-# VampArt
+# VampArt [deprecated]
 
-[![Build Status](https://travis-ci.org/smolnar/vampart.svg?branch=master)](https://travis-ci.org/smolnar/vampart)
 
 **Important**: Deprecated. Moved to https://github.com/SlovakNationalGallery/vampart
 
